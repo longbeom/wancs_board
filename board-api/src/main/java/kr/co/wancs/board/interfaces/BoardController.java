@@ -1,5 +1,6 @@
 package kr.co.wancs.board.interfaces;
 
+import java.util.List;
 import kr.co.wancs.board.application.BoardService;
 import kr.co.wancs.board.domain.Board;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -18,5 +19,12 @@ public class BoardController {
     Board board = boardService.getBoard(id);
 
     return board;
+  }
+
+  @GetMapping("/board")
+  public List<Board> boardList() {
+    List<Board> boardList = boardService.getBoardList();
+
+    return boardList;
   }
 }
